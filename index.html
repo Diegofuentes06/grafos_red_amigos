@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red de Amigos - Simulador de Grafos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Simulador de Red de Amigos con Teoría de Grafos</h1>
+        <p>Analiza conexiones sociales usando algoritmos de grafos y IA heurística local.</p>
+    </header>
+
+    <main>
+        <section id="controls">
+            <div id="form-person">
+                <h2>Registrar Persona</h2>
+                <form id="person-form">
+                    <input type="text" id="name" placeholder="Nombre" required>
+                    <input type="text" id="community" placeholder="Comunidad/Grupo">
+                    <input type="text" id="hobbies" placeholder="Hobbies (separados por coma)">
+                    <input type="text" id="sports" placeholder="Deportes (separados por coma)">
+                    <input type="text" id="tastes" placeholder="Gustos Personales (separados por coma)">
+                    <input type="text" id="interests" placeholder="Intereses Académicos/Culturales (separados por coma)">
+                    <button type="submit">Agregar Persona</button>
+                </form>
+            </div>
+
+            <div id="form-friendship">
+                <h2>Crear Amistad</h2>
+                <form id="friendship-form">
+                    <select id="person1" required>
+                        <option value="">Seleccionar Persona 1</option>
+                    </select>
+                    <select id="person2" required>
+                        <option value="">Seleccionar Persona 2</option>
+                    </select>
+                    <button type="submit">Crear Amistad</button>
+                </form>
+            </div>
+
+            <div id="actions">
+                <button id="clear-data">Limpiar Datos</button>
+                <button id="restore-sample">Restaurar Datos de Ejemplo</button>
+            </div>
+        </section>
+
+        <section id="graph-section">
+            <h2>Visualización de la Red</h2>
+            <svg id="graph-svg" width="800" height="600"></svg>
+        </section>
+
+        <section id="details">
+            <h2>Detalles de la Persona Seleccionada</h2>
+            <div id="person-details"></div>
+            <h3>Amigos Directos</h3>
+            <ul id="direct-friends"></ul>
+            <h3>Amigos de Amigos</h3>
+            <ul id="friends-of-friends"></ul>
+            <h3>Amigos en Común (con otra persona seleccionada)</h3>
+            <ul id="common-friends"></ul>
+        </section>
+
+        <section id="recommendations">
+            <h2>Sugerencias de Amistades</h2>
+            <ul id="suggestions-list"></ul>
+        </section>
+    </main>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
